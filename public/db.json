@@ -1,0 +1,94 @@
+{
+    "jeans": [
+        {
+            "id": 1,
+            "title": "RIPPED SKINNY JEANS",
+            "price": 69.90,
+            "desc": "Skinny jeans with five pockets. Washed effect and rips with interior patch at legs. Frayed hem. Front zip and metal button closure.",
+            "sizes": [30, 31, 32, 34, 36, 38, 40],
+            "colors": ["dark blue", "gray"],
+            "composition": ["99% cotton", "1% elastane"]
+        },
+        {
+            "id": 2,
+            "title": "SLIM FIT JEANS",
+            "price": 49.90,
+            "desc": "Slim fit jeans with washed effect. Five pockets. Front zip and button closure.",
+            "sizes": [29, 30, 31, 32, 34, 36],
+            "colors": ["indigo"],
+            "composition": ["99% cotton", "1% elastane"]
+        },
+        {
+            "id": 3,
+            "title": "RIPPED SKINNY JEANS WITH BANDANA PATCH",
+            "price": 49.90,
+            "desc": "Skinny jeans with five pockets. Washed effect and rips with contrasting interior patch with bandana print. Frayed hem. Front zip and metal button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["gray"],
+            "composition": ["99% cotton", "1% elastane"]
+        },
+        {
+            "id": 4,
+            "title": "FRAYED SLIM JEANS",
+            "price": 69.90,
+            "desc": "Slim fit five pocket jeans. Washed effect with frayed trim at legs. Front zip and button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["black", "dark blue", "gray", "light blue"],
+            "composition": ["98% cotton", "2% elastane"]
+        },
+        {
+            "id": 5,
+            "title": "SLIM FIT VINTAGE WASH JEANS",
+            "price": 49.90,
+            "desc": "Slim fit jeans with washed effect at seams. Five pockets. Front metal button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["dark blue"],
+            "composition": ["99% cotton", "1% elastane"]
+        },
+        {
+            "id": 6,
+            "title": "TEXT PRINT SKINNY JEANS",
+            "price": 69.90,
+            "desc": "Tapered fit skinny jeans with washed ripped effect. Printed text detail. Five pockets. Front zip and metal button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["dark blue"],
+            "composition": ["99% cotton", "1% elastane"]
+        },
+        {
+            "id": 7,
+            "title": "LONG SKINNY JEANS WITH CHAIN",
+            "price": 69.90,
+            "desc": "Long skinny jeans with removable accessory at waist. Washed effect with rips at legs. Five pockets. Front metal button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["black"],
+            "composition": ["98% cotton", "2% elastane"]
+        },
+        {
+            "id": 8,
+            "title": "SKINNY JEANS WITH PATCHES",
+            "price": 69.90,
+            "desc": "Skinny jeans with five pockets. Washed effect and rips with contrasting interior patches. Frayed hem. Front zip and metal button closure.",
+            "sizes": [29, 30, 31, 32],
+            "colors": ["black"],
+            "composition": ["60% cotton", "33% modal", "5% polyester", "2% elastane"]
+        },
+        {
+            "id": 9,
+            "title": "RIPPED BIKER JEANS",
+            "price": 69.90,
+            "desc": "Slim fit jeans. Five pockets. Reinforced seams at legs, washed effect, rips, and interior patch. Front zip and button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["black"],
+            "composition": ["98% cotton", "2% elastane"]
+        },
+        {
+            "id": 10,
+            "title": "RIPPED SOFT DENIM JEANS",
+            "price": 69.90,
+            "desc": "Jeans with adjustable elastic drawstring waistband. Five pockets. Washed effect with frayed trim at legs. Front zip and button closure.",
+            "sizes": [30, 31, 32, 34, 36],
+            "colors": ["dark blue"],
+            "composition": ["63% cotton", "36% polyester", "1% elastane"]
+        }
+    ]
+}
