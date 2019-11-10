@@ -29,7 +29,3 @@ export const sortProductsByPrice = (items, sortFilter) => (dispatch) => {
         sortFilter: sortFilter}
     })
 }
-
-export const addToCart = () => (dispatch) => {
-
-}
