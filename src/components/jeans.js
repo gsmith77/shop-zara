@@ -1,7 +1,7 @@
 import React from 'react'
 import './Jeans.css'
 import {connect} from 'react-redux'
-import {fetchJeans} from '../actions/jeanActions'
+import {fetchJeans, addToCart} from '../actions/jeanActions'
 
 class Jeans extends React.Component{
     
@@ -15,24 +15,35 @@ class Jeans extends React.Component{
             'clear': 'both'
         }
         
-        const pStyle = {
-            'float': 'left'
+        const bStyle = {
+            'float': 'left',
+            'clear': 'both'
         }
+
 
         const productItems = this.props.filteredProducts.length ? (
             this.props.filteredProducts.map(jean => {
-                return  <div className="column" key={jean.desc}>
-                        <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
-                        <b style={pStyle} >${jean.price}</b> <b>{jean.title}</b>
-                </div> 
-            })
+                return  (
+                    <div className="column" key={jean.desc}>
+                            <a href={`#${jean.id}`} onClick={() => this.props.addToCart(jean)}>
+                                <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
+                            </a>
+                            <div>
+                                <b style={bStyle} >${jean.price.toFixed(2)}</b> <b>{jean.title} </b>
+                                <br/>
+                                <br/>
+                                <button className="btn btn-primary">Add To Cart</button>
+                            </div>
+                    </div> 
+                )})
             )
             : 
             this.props.jeans.map(jean => {
                 return (
                 <div className="column" key={jean.desc}>
                     <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
-                    <b style={pStyle} >${jean.price}</b> <b>{jean.title}</b>
+                    
+                    <b style={bStyle} >${jean.price.toFixed(2)}</b> <b>{jean.title}</b>
                 </div>
                 )}
             )
@@ -53,4 +64,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {fetchJeans})(Jeans)
+export default connect(mapStateToProps, {fetchJeans, addToCart})(Jeans)

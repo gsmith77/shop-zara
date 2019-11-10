@@ -28,5 +28,8 @@ export const sortProductsByPrice = (items, sortFilter) => (dispatch) => {
         }),
         sortFilter: sortFilter}
     })
-    //paylod needs filterProducts and sortFilter
+}
+
+export const addToCart = () => (dispatch) => {
+
 }
