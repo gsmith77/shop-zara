@@ -18,5 +18,14 @@ export const addToCart = (items, product) => (dispatch) => {
 }
 
 export const removeFromCart = (items, product) => (dispatch) => {
-    
+    const cartItems = items.slice().map(p => {    
+        if(p.id === product.id && product.count > 0){
+            product.count -= 1
+        }
+        return p
+    }).filter(pro => pro.count === 0 ? false : true)
+    debugger
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    return dispatch({type: 'REMOVE_FROM_CART', payload: {cartItems: cartItems}})
 }

@@ -4,6 +4,9 @@ export default function cartReducer(state={cart:[]}, action){
         case 'ADD_TO_CART':
             return {...state, cart: action.payload.cartItems}
 
+        case 'REMOVE_FROM_CART':
+            return {...state, cart: action.payload.cartItems}
+            
         default:
             return state
     }
