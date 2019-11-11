@@ -12,16 +12,19 @@ function App() {
   return (
     <Provider store={store}>
       <div className="container">
-        <h1 style={{'textAlign': 'center'}}>Shop Zara</h1>
+        <h1>Shop Zara</h1>
         <hr/>
         <div className="row">
-          <div style={{'clear': 'both'}} className="col-md-9">
+          <div className="col-md-2">
             <Filter />
             <hr/>
-            <Jeans />
           </div>
-          <div className="col-md-9">
+          <div className="cart">
             <Cart />
+          </div>
+          <div className="products">
+
+          <Jeans />
           </div>
         </div>
       </div>

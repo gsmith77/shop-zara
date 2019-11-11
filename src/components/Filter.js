@@ -6,14 +6,14 @@ class Filter extends Component {
 
     render() {
         const colStyle = {
-            'float': 'left',
-            'marginRight': '33%',
+            'display': 'inline',
+            'marginRight': '10%',
             'marginLeft': '0.5%'
         }
         return (
             <div style={{}} className="row">
                 <div style={colStyle} className="col-md-4">
-                    <label>Search Bar</label>
+                    <h2>Search Bar</h2>
                 </div>
                 <div style={colStyle} className="col-md-4">
                     <label>Order by price

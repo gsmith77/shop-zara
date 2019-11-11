@@ -7,9 +7,9 @@ class Cart extends Component {
         const {cartItems} = this.props
         return (
             <div>
-                {cartItems.length === 0 ? 'Cart is empty' : <div>Currently {cartItems.length} product(s) in your cart</div>}
-                {cartItems.length > 0 ?
-                    <div className="column">
+                {cartItems.length === 0 ? <div style={{'float': 'right'}}>Cart is empty</div> :
+                    <div style={{'float': 'right'}} className="column">
+                        Currently {cartItems.length} product(s) in your cart
                         <ul>
                         {cartItems.map(item => (
                                 <li key={item.id}>
@@ -22,7 +22,7 @@ class Cart extends Component {
                         </ul>
                         Total: ${cartItems.reduce((a,b) => a + b.price*b.count, 0).toFixed(2)}
                     </div> 
-                : null}
+                }
             </div>
         )
         
