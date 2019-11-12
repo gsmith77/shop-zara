@@ -10,6 +10,7 @@ class Filter extends Component {
             'marginRight': '10%',
             'marginLeft': '0.5%'
         }
+
         return (
             <div style={{}} className="row">
                 <div style={colStyle} className="col-md-4">
@@ -17,7 +18,7 @@ class Filter extends Component {
                 </div>
                 <div style={colStyle} className="col-md-4">
                     <label>Order by price
-                        <select className="form-control" value={this.props.sort} onChange={(e) => this.props.sortProductsByPrice(this.props.filteredProducts, e.target.value)}>
+                        <select className="form-control" value={this.props.sort} onChange={(e) => this.props.sortProductsByPrice((this.props.filteredBySize ? this.props.filteredProducts : this.props.jeans), e.target.value)}>
                             <option value=""></option>
                             <option value="lowest to highest">lowest to highest</option>
                             <option value="highest to lowest">highest to lowest</option>
@@ -26,7 +27,7 @@ class Filter extends Component {
                 </div>
                 <div className="col-md-4">
                     <label>Search by size
-                        <select className="form-control" value={this.props.size} onChange={(e) => this.props.filterProductsBySize(this.props.jeans, e.target.value)}>
+                        <select className="form-control" value={this.props.size} onChange={(e) => this.props.filterProductsBySize((this.props.orderedByPrice && e.target.value.length ? this.props.filteredProducts : this.props.jeans), e.target.value)}>
                             <option value="" ></option>
                             <option value={29} >29</option>
                             <option value={30} >30</option>
@@ -50,7 +51,9 @@ const mapStateToProps = state => {
         jeans: state.products.jeans,
         filteredProducts: state.products.filteredProducts,
         sortFilter: state.products.sortFilter,
-        size: state.products.size
+        size: state.products.size,
+        orderedByPrice: state.products.orderedByPrice,
+        filteredBySize: state.products.filteredBySize
     }
 }
 

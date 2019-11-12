@@ -13,7 +13,7 @@ class Jeans extends React.Component{
         const imgStyle = {
             'height': '110%',
             'width': '110%',
-            'clear': 'both'
+            'float': 'left'
         }
         
         const bStyle = {
@@ -24,7 +24,7 @@ class Jeans extends React.Component{
 
         const productItems = this.props.filteredProducts.length ? (
             this.props.filteredProducts.map(jean => {
-                return  (
+                return (
                     <div className="column" key={jean.desc}>
                             <a href={`#${jean.id}`} onClick={() => this.props.addToCart(this.props.cartItems, jean)}>
                                 <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
@@ -44,11 +44,13 @@ class Jeans extends React.Component{
                 <div className="column" key={jean.desc}>
                     <a href={`#${jean.id}`} onClick={() => this.props.addToCart(this.props.cartItems, jean)}>
                         <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
-                    </a>                    
-                    <b style={bStyle} >${jean.price.toFixed(2)}</b> <b>{jean.title}</b>
-                    <br/>
-                    <br/>
-                    <button className="btn btn-primary" onClick={() => this.props.addToCart(this.props.cartItems, jean)}>Add To Cart</button>
+                    </a>  
+                    <div>                  
+                        <b style={bStyle} >${jean.price.toFixed(2)}</b> <b>{jean.title}</b>
+                        <br/>
+                        <br/>
+                        <button className="btn btn-primary" onClick={() => this.props.addToCart(this.props.cartItems, jean)}>Add To Cart</button>
+                    </div>
                 </div>
                 )}
             )

@@ -24,7 +24,6 @@ export const removeFromCart = (items, product) => (dispatch) => {
         }
         return p
     }).filter(pro => pro.count === 0 ? false : true)
-    debugger
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
     return dispatch({type: 'REMOVE_FROM_CART', payload: {cartItems: cartItems}})
