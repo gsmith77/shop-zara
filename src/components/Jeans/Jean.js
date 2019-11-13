@@ -14,6 +14,7 @@ class Jean extends Component {
         }else{
             return (
                 <div>
+                    <button onClick={() => this.props.browserFunctions.history.goBack()}>Go Back</button>
                     {product.title}
                 </div>
             )
