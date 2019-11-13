@@ -7,7 +7,6 @@ import Filter from './components/Filter'
 import Cart from './components/Cart';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Jean from './components/Jeans/Jean'
-// import {connect} from 'react-redux'
 
 
 function App() {
