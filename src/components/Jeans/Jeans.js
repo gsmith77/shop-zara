@@ -1,14 +1,22 @@
 import React from 'react'
 import './Jeans.css'
 import {connect} from 'react-redux'
-import {fetchJeans} from '../actions/jeanActions'
-import {addToCart} from '../actions/cartActions'
+import {fetchJeans} from '../../actions/jeanActions'
+import {addToCart} from '../../actions/cartActions'
+import { Link } from 'react-router-dom';
 
 class Jeans extends React.Component{
     
     componentDidMount(){
         this.props.fetchJeans()
     }
+
+
+    // goToShowPage = (product) => {
+
+    // }
+
+
     render(){
         const imgStyle = {
             'height': '110%',
@@ -26,11 +34,11 @@ class Jeans extends React.Component{
             this.props.filteredProducts.map(jean => {
                 return (
                     <div className="column" key={jean.desc}>
-                            <a href={`#${jean.id}`} onClick={() => this.props.addToCart(this.props.cartItems, jean)}>
-                                <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
-                            </a>
+                        <Link to={`/view/${jean.id}`}>
+                            <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
+                        </Link>
                             <div>
-                                <b style={bStyle} >${jean.price.toFixed(2)}</b> <b>{jean.title} </b>
+                                <b style={bStyle}>${jean.price.toFixed(2)}</b> <b>{jean.title} </b>
                                 <br/>
                                 <br/>
                                 <button className="btn btn-primary" onClick={() => this.props.addToCart(this.props.cartItems, jean)}>Add To Cart</button>
@@ -42,11 +50,11 @@ class Jeans extends React.Component{
             this.props.jeans.map(jean => {
                 return (
                 <div className="column" key={jean.desc}>
-                    <a href={`#${jean.id}`} onClick={() => this.props.addToCart(this.props.cartItems, jean)}>
-                        <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
-                    </a>  
+                        <Link to={`/view/${jean.id}`}>
+                            <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
+                        </Link>
                     <div>                  
-                        <b style={bStyle} >${jean.price.toFixed(2)}</b> <b>{jean.title}</b>
+                        <b style={bStyle}>${jean.price.toFixed(2)}</b> <b>{jean.title}</b>
                         <br/>
                         <br/>
                         <button className="btn btn-primary" onClick={() => this.props.addToCart(this.props.cartItems, jean)}>Add To Cart</button>
