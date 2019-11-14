@@ -2,7 +2,7 @@
     "jeans": [
         {
             "id": 1,
-            "img": "1st_",
+            "images": ["1st_1", "1st_2", "1st_3"],
             "title": "RIPPED SKINNY JEANS",
             "price": 69.90,
             "desc": "Skinny jeans with five pockets. Washed effect and rips with interior patch at legs. Frayed hem. Front zip and metal button closure.",
@@ -12,7 +12,7 @@
         },
         {
             "id": 2,
-            "img": "2nd_",
+            "images": ["2nd_1", "2nd_2", "2nd_3"],
             "title": "SLIM FIT JEANS",
             "price": 49.90,
             "desc": "Slim fit jeans with washed effect. Five pockets. Front zip and button closure.",
@@ -22,7 +22,7 @@
         },
         {
             "id": 3,
-            "img": "3rd_",
+            "images": ["3rd_1", "3rd_2", "3rd_3"],
             "title": "RIPPED SKINNY JEANS WITH BANDANA PATCH",
             "price": 49.90,
             "desc": "Skinny jeans with five pockets. Washed effect and rips with contrasting interior patch with bandana print. Frayed hem. Front zip and metal button closure.",
@@ -32,7 +32,7 @@
         },
         {
             "id": 4,
-            "img": "4th_",
+            "images": ["4th_1", "4th_2", "4th_3"],
             "title": "FRAYED SLIM JEANS",
             "price": 69.90,
             "desc": "Slim fit five pocket jeans. Washed effect with frayed trim at legs. Front zip and button closure.",
@@ -42,7 +42,7 @@
         },
         {
             "id": 5,
-            "img": "5th_",
+            "images": ["5th_1", "5th_2", "5th_3"],
             "title": "SLIM FIT VINTAGE WASH JEANS",
             "price": 49.90,
             "desc": "Slim fit jeans with washed effect at seams. Five pockets. Front metal button closure.",
@@ -52,7 +52,7 @@
         },
         {
             "id": 6,
-            "img": "6th_",
+            "images": ["6th_1", "6th_2", "6th_3"],
             "title": "TEXT PRINT SKINNY JEANS",
             "price": 69.90,
             "desc": "Tapered fit skinny jeans with washed ripped effect. Printed text detail. Five pockets. Front zip and metal button closure.",
@@ -62,7 +62,7 @@
         },
         {
             "id": 7,
-            "img": "7th_",
+            "images": ["7th_1", "7th_2", "7th_3"],
             "title": "LONG SKINNY JEANS WITH CHAIN",
             "price": 69.90,
             "desc": "Long skinny jeans with removable accessory at waist. Washed effect with rips at legs. Five pockets. Front metal button closure.",
@@ -72,7 +72,7 @@
         },
         {
             "id": 8,
-            "img": "8th_",
+            "images":["8th_1", "8th_2", "8th_3"],
             "title": "SKINNY JEANS WITH PATCHES",
             "price": 69.90,
             "desc": "Skinny jeans with five pockets. Washed effect and rips with contrasting interior patches. Frayed hem. Front zip and metal button closure.",
@@ -82,7 +82,7 @@
         },
         {
             "id": 9,
-            "img": "9th_",
+            "images": ["9th_1", "9th_2", "9th_3"],
             "title": "RIPPED BIKER JEANS",
             "price": 69.90,
             "desc": "Slim fit jeans. Five pockets. Reinforced seams at legs, washed effect, rips, and interior patch. Front zip and button closure.",
@@ -92,7 +92,7 @@
         },
         {
             "id": 10,
-            "img": "10th_",
+            "images": ["10th_1", "10th_2", "10th_3"],
             "title": "RIPPED SOFT DENIM JEANS",
             "price": 69.90,
             "desc": "Jeans with adjustable elastic drawstring waistband. Five pockets. Washed effect with frayed trim at legs. Front zip and button closure.",

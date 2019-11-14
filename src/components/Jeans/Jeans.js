@@ -11,16 +11,10 @@ class Jeans extends React.Component{
         this.props.fetchJeans()
     }
 
-
-    // goToShowPage = (product) => {
-
-    // }
-
-
     render(){
         const imgStyle = {
-            'height': '110%',
-            'width': '110%',
+            'height': '480px',
+            'width': '600px',
             'float': 'left'
         }
         
@@ -34,8 +28,9 @@ class Jeans extends React.Component{
             this.props.filteredProducts.map(jean => {
                 return (
                     <div className="column" key={jean.desc}>
-                        <Link to={`/view/${jean.id}`}>
-                            <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
+                        <Link onClick={() => localStorage.setItem('productID', JSON.stringify(jean.id))} to={`/view/${jean.id}`}>
+                            <img style={imgStyle} src={`/products/jeans/${jean.images[0]}.jpg`} alt="product"/>
+
                         </Link>
                             <div>
                                 <b style={bStyle}>${jean.price.toFixed(2)}</b> <b>{jean.title} </b>
@@ -51,7 +46,7 @@ class Jeans extends React.Component{
                 return (
                 <div className="column" key={jean.desc}>
                         <Link to={`/view/${jean.id}`}>
-                            <img style={imgStyle} src={`/products/jeans/${jean.img}1.jpg`} alt="product"/>
+                            <img style={imgStyle} src={`/products/jeans/${jean.images[0]}.jpg`} alt="product"/>
                         </Link>
                     <div>                  
                         <b style={bStyle}>${jean.price.toFixed(2)}</b> <b>{jean.title}</b>
