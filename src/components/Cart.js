@@ -1,39 +1,68 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {removeFromCart} from '../actions/cartActions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import {addQuantityOfProductToCart, decreaseQuantityOfProductInCart, removeItemFromCart} from '../actions/cartActions'
+import ShippingAndCheckout from './ShippingAndCheckout'
 
-class Cart extends Component {
-    render() {
-        const {cartItems} = this.props
-        return (
-            <div>
-                {cartItems.length === 0 ? <div style={{'float': 'right'}}>Cart is empty</div> :
-                    <div style={{'float': 'right'}} className="column">
-                        Currently {cartItems.length} product(s) in your cart
-                        <ul>
-                        {cartItems.map(item => (
-                                <li key={item.id}>
-                                    {item.title} x {item.count} = ${(item.price*item.count).toFixed(2)}
-                                    <button className="btn btn-danger"
-                                    onClick={() => this.props.removeFromCart(this.props.cartItems, item)}
-                                    >X</button>
-                                </li>
-                            ))}
+class Cart extends Component{
+
+    render(){
+        const imgStyle = {
+            'height': '280px',
+            'width': '200px'
+        }
+
+        let cartItems = this.props.items.length ?
+            (  
+                this.props.items.map(item=>{
+                    return(
+                        <ul style={{'list-style-type': 'none'}}>
+                            <li className="collection-item avatar" key={item.id}>
+                                <div className="item-img"> 
+                                    <img style={imgStyle} src={`/products/jeans/${item.images[0]}.jpg`} alt="item" className=""/>
+                                </div>
+                            
+                                <div className="item-desc">
+                                    <span className="title">{item.title}</span>
+                                    <p>{item.desc}</p>
+                                    <p><b>Price: ${item.price.toFixed(2)}</b></p> 
+                                    <p>
+                                        <b>Quantity: {item.count}</b> 
+                                    </p>
+                                    <div className="add-remove">
+                                        <Link onClick={() => this.props.addQuantityOfProductToCart(this.props.items, item)} to="/cart"><i className="material-icons">arrow_drop_up</i></Link>
+                                        <Link onClick={() => this.props.decreaseQuantityOfProductInCart(this.props.items, item)} to="/cart"><i className="material-icons">arrow_drop_down</i></Link>
+                                    </div>
+                                    <button onClick={() => this.props.removeItemFromCart(this.props.items, item)} className="waves-effect waves-light btn pink remove">Remove</button>
+                                </div>
+                            </li>                        
                         </ul>
-                        Total: ${cartItems.reduce((a,b) => a + b.price*b.count, 0).toFixed(2)}
-                    </div> 
-                }
+                    )
+                })
+            ):
+
+             (
+                <p>Nothing.</p>
+             )
+       return(
+            <div className="container">
+                <div className="cart">
+                    <h5>Your Cart:</h5>
+                    <ul className="collection">
+                        {cartItems}
+                    </ul>
+                    {/* <h5>Total: {this.props.items.reduce((total, product) => total + product.price*product.count, 0)}</h5> */}
+                    <ShippingAndCheckout cartItems={this.props.items}/>
+                </div>  
             </div>
-        )
-        
+       )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        cartItems: state.cart.cart
+const mapStateToProps = (state)=>{
+    return{
+        items: state.cart.cart
     }
 }
 
-
-export default connect(mapStateToProps, {removeFromCart})(Cart)
+export default connect(mapStateToProps, {addQuantityOfProductToCart, decreaseQuantityOfProductInCart, removeItemFromCart})(Cart)
