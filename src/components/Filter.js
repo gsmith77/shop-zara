@@ -5,18 +5,10 @@ import {filterProductsBySize, sortProductsByPrice} from '../actions/jeanActions'
 class Filter extends Component {
 
     render() {
-        const colStyle = {
-            'display': 'inline',
-            'marginRight': '10%',
-            'marginLeft': '0.5%'
-        }
 
         return (
-            <div style={{}} className="row">
-                <div style={colStyle} className="col-md-4">
-                    <h2>Search Bar</h2>
-                </div>
-                <div style={colStyle} className="col-md-4">
+            <div style={{'float':'left'}} className="container">
+                <div style={{'float':'left'}} className="order-by-price">
                     <label>Order by price
                         <select className="form-control" value={this.props.sort} onChange={(e) => this.props.sortProductsByPrice((this.props.filteredBySize ? this.props.filteredProducts : this.props.jeans), e.target.value)}>
                             <option value=""></option>
@@ -25,7 +17,7 @@ class Filter extends Component {
                         </select>
                     </label>
                 </div>
-                <div className="col-md-4">
+                <div style={{'float':'left'}} className="search-by-size">
                     <label>Search by size
                         <select className="form-control" value={this.props.size} onChange={(e) => this.props.filterProductsBySize((this.props.orderedByPrice && e.target.value.length ? this.props.filteredProducts : this.props.jeans), e.target.value)}>
                             <option value="" ></option>

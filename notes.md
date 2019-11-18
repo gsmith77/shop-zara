@@ -7,4 +7,5 @@
 [x] Clear page to show just that product.
 [x] Use Browserfy to be able to display a 'Back' < a > tag to go back in the website.
 [x] Create Product Page for product.
-[ ] Add functionality of adding size of jean to cart
+[ ] Add functionality of adding size of jean to cart.
+[ ] Create Dropdown menus for Filter Component.

@@ -1,4 +1,4 @@
-export const addToCart = (items, product) => (dispatch) => {
+export const addQuantityOfProductToCart = (items, product) => (dispatch) => {
     const cartItems = items.slice();
     let productAlreadyInCart = false
     //check if product is already in cart
@@ -14,10 +14,10 @@ export const addToCart = (items, product) => (dispatch) => {
     }
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    return dispatch({type:'ADD_TO_CART', payload: {cartItems: cartItems}})
+    return dispatch({type:'INCREASE_PRODUCT_QUANTITY', payload: {cartItems: cartItems}})
 }
 
-export const removeFromCart = (items, product) => (dispatch) => {
+export const decreaseQuantityOfProductInCart = (items, product) => (dispatch) => {
     const cartItems = items.slice().map(p => {    
         if(p.id === product.id && product.count > 0){
             product.count -= 1
@@ -26,5 +26,15 @@ export const removeFromCart = (items, product) => (dispatch) => {
     }).filter(pro => pro.count === 0 ? false : true)
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    return dispatch({type: 'REMOVE_FROM_CART', payload: {cartItems: cartItems}})
+    return dispatch({type: 'DECREASE_PRODUCT_QUANTITY', payload: {cartItems: cartItems}})
+}
+
+export const removeItemFromCart = (items, product) => (dispatch) => {
+    let cartItems = items.slice()
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    
+    return dispatch({type: 'REMOVE_ITEM', payload: {
+        cartItems: cartItems.filter(p => p.id !== product.id)
+    }})
 }
