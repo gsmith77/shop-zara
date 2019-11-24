@@ -10,7 +10,7 @@ import {addQuantityOfProductToCart} from '../actions/cartActions'
     }
 
     render(){
-        let itemList = this.props.items.map(item=>{
+        let itemList = this.props.filteredProducts.map(item=>{
             return(
                 <div className="card" key={item.id}>
                         <div className="card-image">
@@ -21,7 +21,7 @@ import {addQuantityOfProductToCart} from '../actions/cartActions'
 
                         <div className="card-content">
                             <p>{item.desc}</p>
-                            <p><b>Price: ${item.price.toFixed(2)}</b></p>
+                            <p><b className="price" data-testid="display-price">Price: ${item.price.toFixed(2)}</b></p>
                         </div>
                  </div>
             )
@@ -39,6 +39,7 @@ import {addQuantityOfProductToCart} from '../actions/cartActions'
 const mapStateToProps = (state)=>{
     return {
       items: state.products.jeans,
+      filteredProducts: state.products.filteredProducts,
       cartItems: state.cart.cart
     }
   }

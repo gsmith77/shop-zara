@@ -42,7 +42,7 @@ class Cart extends Component{
             ):
 
              (
-                <p>Nothing.</p>
+                <p></p>
              )
        return(
             <div className="container">
@@ -52,7 +52,7 @@ class Cart extends Component{
                         {cartItems}
                     </ul>
                     {/* <h5>Total: {this.props.items.reduce((total, product) => total + product.price*product.count, 0)}</h5> */}
-                    <ShippingAndCheckout cartItems={this.props.items}/>
+                    {cartItems.length ? <ShippingAndCheckout cartItems={this.props.items}/> : null}
                 </div>  
             </div>
        )

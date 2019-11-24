@@ -32,9 +32,11 @@ export const decreaseQuantityOfProductInCart = (items, product) => (dispatch) =>
 export const removeItemFromCart = (items, product) => (dispatch) => {
     let cartItems = items.slice()
 
-    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    const newItems = cartItems.filter(p => p.id !== product.id)
+    
+    localStorage.setItem('cartItems', JSON.stringify(newItems))
     
     return dispatch({type: 'REMOVE_ITEM', payload: {
-        cartItems: cartItems.filter(p => p.id !== product.id)
+        cartItems: newItems
     }})
 }

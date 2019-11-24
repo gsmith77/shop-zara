@@ -8,4 +8,5 @@
 [x] Use Browserfy to be able to display a 'Back' < a > tag to go back in the website.
 [x] Create Product Page for product.
 [ ] Add functionality of adding size of jean to cart.
-[ ] Create Dropdown menus for Filter Component.
+[x] Create Dropdown menu.
+[x] Customize Dropdown menu for Filter Component.

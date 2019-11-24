@@ -21,7 +21,6 @@ export const filterProductsBySize = (items, size) => (dispatch) => {
 export const sortProductsByPrice = (items, sortFilter) => (dispatch) => {
     //if products are ordered by price then use FilteredProducts
     const products = items.slice();
-    
     !sortFilter.length ? dispatch({type:'REMOVE_PRICE_FILTER', payload: {filteredProducts: products, sortFilter: sortFilter}})
     :
     dispatch({type:'SORT_BY_PRICE', payload: {
