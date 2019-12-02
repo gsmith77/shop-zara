@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PurchaseButton from './PurchaseButton'
+import { Button } from 'antd';
 
 export default class ShippingAndCheckout extends Component {
 
@@ -25,9 +26,9 @@ export default class ShippingAndCheckout extends Component {
                         </li>
                     <li className="collection-item"><b>Total: ${total}</b></li>
                 </div>
-                <div className="checkout">
-                    <Link to="/checkout" className="waves-effect waves-light btn">Checkout</Link>
-                </div>
+                <PurchaseButton price={total} >
+                    <Button className="waves-effect waves-light btn" style={{ width: '12%', marginTop: 20 }}>Checkout</Button>
+                </PurchaseButton>
             </div>
         )
     }

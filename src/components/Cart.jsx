@@ -16,7 +16,7 @@ class Cart extends Component{
             (  
                 this.props.items.map(item=>{
                     return(
-                        <ul style={{'list-style-type': 'none'}}>
+                        <ul key={item.id} style={{'list-style-type': 'none'}}>
                             <li className="collection-item avatar" key={item.id}>
                                 <div className="item-img"> 
                                     <img style={imgStyle} src={`/products/jeans/${item.images[0]}.jpg`} alt="item" className=""/>
