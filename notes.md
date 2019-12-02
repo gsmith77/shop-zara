@@ -10,3 +10,5 @@
 [ ] Add functionality of adding size of jean to cart.
 [x] Create Dropdown menu.
 [x] Customize Dropdown menu for Filter Component.
+[x] Add Stripe Card Component.
+[ ] Create Charge Object to send to Stripe to create an actual charge.
