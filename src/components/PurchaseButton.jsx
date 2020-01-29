@@ -1,30 +1,32 @@
-import * as React from 'react';
-import StripeCheckout from 'react-stripe-checkout';
+import React, {Component} from 'react';
+import {CardElement, injectStripe} from 'react-stripe-elements';
 
-const onToken = (token) => {
-  debugger
-  console.log('Stripe Token', token);
-  fetch('https://api.stripe.com/v1/charges', {method: 'POST', headers: {'Accept': 'application/json', 
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Authorization': 'Bearer pk_test_WFCmvstVaW21fcxhEtoVuHUY00VQZnhBlD'
-  },
-  body: token.card
-});
-};
+class PurchaseButton extends Component {
+  constructor(props) {
+    super(props);
+    this.submit = this.submit.bind(this);
+  }
 
-const PurchaseButton = ({
-  price, title, children, ...props
-}) => (
-  <StripeCheckout
-    name="MoviesStore@appbase.io"
-    description={title}
-    token={onToken}
-    label="Pay with 💳"
-    amount={price}
-    stripeKey={"pk_test_WFCmvstVaW21fcxhEtoVuHUY00VQZnhBlD"}
-  >
-    {children || <span {...props}>PURCHASE</span>}
-  </StripeCheckout>
-);
+  async submit(ev) {
+    let {token} = await this.props.stripe.createToken({name: "Name"});
+    let response = await fetch("/charge", {
+      method: "POST",
+      headers: {"Content-Type": "text/plain"},
+      body: token.id
+    });
+  
+    if (response.ok) console.log("Purchase Complete!")
+  }
 
-export default PurchaseButton
+  render() {
+    return (
+      <div className="checkout">
+        <p>Would you like to complete the purchase?</p>
+        <CardElement />
+        <button onClick={this.submit}>Purchase</button>
+      </div>
+    );
+  }
+}
+
+export default injectStripe(PurchaseButton);

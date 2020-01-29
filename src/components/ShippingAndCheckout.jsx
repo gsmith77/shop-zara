@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PurchaseButton from './PurchaseButton'
 import { Button } from 'antd';
+import {Elements, StripeProvider} from 'react-stripe-elements';
 
 export default class ShippingAndCheckout extends Component {
 
@@ -26,9 +27,11 @@ export default class ShippingAndCheckout extends Component {
                         </li>
                     <li className="collection-item"><b>Total: ${total}</b></li>
                 </div>
-                <PurchaseButton price={total} >
-                    <Button className="waves-effect waves-light btn" style={{ width: '12%', marginTop: 20 }}>Checkout</Button>
-                </PurchaseButton>
+                <StripeProvider apiKey="pk_test_WFCmvstVaW21fcxhEtoVuHUY00VQZnhBlD">
+                    <Elements>
+                        <PurchaseButton price={total} />
+                    </Elements>
+                </StripeProvider>
             </div>
         )
     }
